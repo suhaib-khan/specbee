@@ -1,0 +1,41 @@
+.news_portal_container {
+  .news_portal_wrapper {
+    height: 95vh;
+    padding: 8rem 8rem 0;
+    display: grid;
+    grid-template-columns: 28rem 1fr;
+    grid-column-gap: 4rem;
+    @include respond(desktop) {
+      padding: 4rem;
+      grid-column-gap: 2rem;
+    }
+    @include respond(tablet) {
+      grid-template-columns: 1fr;
+    }
+    @include respond(mobile) {
+      padding: 2rem;
+    }
+
+    .news_listing_wrapper {
+      padding-right: 1rem;
+      overflow-y: auto;
+      @include scrollbar;
+
+      .no_results_found {
+        height: 100%;
+        width: 100%;
+        @include flex(row, center, center, 0);
+        @include font(600, 1.4rem, $grey, 2.2rem);
+
+        span {
+          height: 20rem;
+          @include flex(row, center, center, 0);
+          background: $light;
+          border: 1px solid $border;
+          width: 100%;
+          border-radius: 0.8rem;
+        }
+      }
+    }
+  }
+}

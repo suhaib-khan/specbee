@@ -1,0 +1,52 @@
+.pagination_container {
+  @include flex(row, center, flex-end, 0);
+  width: 100%;
+  @include respond(tablet) {
+    justify-content: center;
+  }
+  .pagination_wrapper {
+    @include flex(row, center, center, 1rem);
+    background: #fff;
+    padding: 1rem;
+
+    @include respond(mobile) {
+      bottom: 1rem;
+    }
+
+    button {
+      background-color: #fff;
+      cursor: pointer;
+      @include flex(row, center, center, 0);
+      border-radius: 50%;
+      width: 3.2rem;
+      height: 3.2rem;
+      transition: 0.2s;
+      @include font(700, 1.2rem, $black, 2rem);
+
+      &:hover {
+        background: $border;
+      }
+
+      &.active {
+        background-color: $black_2;
+        color: #fff;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        &:hover {
+          background: unset;
+        }
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+      }
+    }
+  }
+}

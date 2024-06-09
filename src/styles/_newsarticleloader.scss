@@ -1,0 +1,32 @@
+.news_article_loader_wrapper {
+  .news_article_loader {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 2rem;
+    @include respond(tablet) {
+      grid-template-columns: 1fr;
+    }
+    .image {
+      height: 9rem;
+      width: 10.2rem;
+      border-radius: 0.8rem;
+      @include respond(tablet) {
+        width: 100%;
+        height: 20rem;
+      }
+    }
+  }
+  .description {
+    height: 5rem;
+    margin: 2rem 0;
+  }
+  .author {
+    height: 2rem;
+    margin: 3rem 0;
+    width: 20%;
+  }
+}
+
+.category_loader {
+  height: 2.2rem;
+}

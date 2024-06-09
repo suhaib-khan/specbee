@@ -1,0 +1,49 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint== mobile {
+    @media (max-width: 37.5em) {
+      //600px
+      @content;
+    }
+  }
+  @if $breakpoint== tablet {
+    @media (max-width: 49em) {
+      // 786px
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (max-width: 80em) {
+      //1280px
+      @content;
+    }
+  }
+}
+
+@mixin font($weight, $size, $color, $lineHeight) {
+  font-weight: $weight;
+  font-size: $size;
+  color: $color;
+  line-height: $lineHeight;
+}
+
+@mixin flex($direction, $alignItems, $justifyContent, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+  gap: $gap;
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 0.15rem;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 200rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $light;
+    border-radius: 1.2rem;
+  }
+}
